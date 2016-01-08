@@ -2,7 +2,7 @@ module.exports = {
   entry: './client/app.js',
 
   output: {
-    path: './',
+    path: './client/static/build',
     filename: 'app.js'
   },
 

@@ -13,6 +13,13 @@ body {
 .angels {
   display: flex;
   justify-content: space-between;
+  position: relative;
+  top: -550px;
+  transition: top 30s linear;
+}
+
+.angels.showing {
+  top: 0;
 }
 
 .angels :last-child {

@@ -4,6 +4,7 @@
   "description": "THE WORLD'S MOST ADVANCED FART MACHINE",
   "main": "index.js",
   "scripts": {
+    "start": "node app.js",
     "build": "webpack --config webpack.config.js",
     "watch": "webpack -w --config webpack.config.js"
   },
@@ -20,5 +21,9 @@
     "elm-webpack-loader": "1.1.1",
     "node-sass": "3.4.2",
     "webpack": "1.12.9"
+  },
+  "dependencies": {
+    "node-static": "0.7.7",
+    "webaudio-buffer-loader": "1.0.1"
   }
 }

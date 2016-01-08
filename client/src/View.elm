@@ -20,6 +20,7 @@ view address model =
   in
     div [ class "container" ]
       [ h1 [] [ text "FRRRRRRP" ]
+      , h3 [] [ text "The Purely Functional Statically Typed Reactive Fart Machine"]
       , mySoundButton "fart.mp3"
       , angels model
       ]
@@ -33,8 +34,8 @@ angels model =
       , ( "showing", model.showingAngels )
       ]
     ]
-    [ img [ src "angel.jpg" ] []
-    , img [src "angel.jpg"] []
+    [ img [ src "files/angel.jpg" ] []
+    , img [src "files/angel.jpg"] []
     ]
 
 soundButton : Address Action -> String -> Html

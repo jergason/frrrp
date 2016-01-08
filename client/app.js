@@ -1,24 +1,16 @@
 import Elm from './src/Main.elm'
 
+import playSound from './sound'
+
 const container = document.querySelector('.container')
-const elmApp = Elm.embed(Elm.Main, container)
+const elmApp = Elm.embed(Elm.Main, container, {done: true})
 
-
-const soundCache = {}
-function playSound(soundName) {
-  console.log('soundName is', soundName)
-  if (soundCache[soundName]) {
-    soundCache[soundName].play()
-    return
-  }
-
-  try {
-    const sound = new Audio(soundName)
-    soundCache[soundName] = sound
-    sound.play()
-  } catch (e) {
-    console.error(e)
-  }
+function donePlaying() {
+  elmApp.ports.done.send(true)
 }
 
-elmApp.ports.playSound.subscribe(playSound)
+function play(soundName) {
+  playSound(donePlaying)
+}
+
+elmApp.ports.stuff.subscribe(play)
